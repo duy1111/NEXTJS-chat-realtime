@@ -13,6 +13,8 @@ import { pusherClient } from "@/app/libs/pusher";
 import GroupChatModal from "@/app/components/modals/GroupChatModal";
 import ConversationBox from "./ConversationBox";
 import { FullConversationType } from "@/app/types";
+import getConversations from "@/app/actions/getConversations";
+import getUsers from "@/app/actions/getUsers";
 
 interface ConversationListProps {
   initialItems: FullConversationType[];
@@ -20,10 +22,11 @@ interface ConversationListProps {
   title?: string;
 }
 
-const ConversationList: React.FC<ConversationListProps> = ({ 
+const ConversationList: React.FC<ConversationListProps> = async({ 
   initialItems, 
   users
 }) => {
+  
   const [items, setItems] = useState(initialItems);
   const [isModalOpen, setIsModalOpen] = useState(false);
 

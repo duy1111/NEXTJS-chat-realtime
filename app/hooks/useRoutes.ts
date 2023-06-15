@@ -25,9 +25,9 @@ const useRoutes = () => {
     },
     { 
       label: '1-3-5', 
-      href: '/home', 
+      href: '/twitter', 
       icon: HiOutlineUserGroup, 
-      active: pathname === '/home'
+      active: pathname === '/twitter'
     },
     {
       label: 'Logout', 

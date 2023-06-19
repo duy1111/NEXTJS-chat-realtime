@@ -1,8 +1,13 @@
-
+'use client'
+import { User } from '@prisma/client'
 import React from 'react'
 import { BsTwitter } from 'react-icons/bs'
 
-const SidebarLogo = () => {
+interface SidebarLogoProps {
+  currentUser: User | null
+}
+
+const SidebarLogo:React.FC<SidebarLogoProps> = ({currentUser}) => {
     
   return (
     <div

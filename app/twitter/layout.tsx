@@ -1,17 +1,20 @@
 
 import React from 'react';
 import Sidebar from './components/layout/Sidebar';
+import getCurrentUser from '../actions/getCurrentUser';
+import FollowBar from './components/layout/FollowBar';
 
 
 
 
 
-const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const Layout: React.FC<{ children: React.ReactNode }> = async({ children }) => {
+  const currentUser = await getCurrentUser()
   return (
     <div className="h-screen bg-black">
       <div className="container h-full mx-auto xl:px-30 max-w-6xl">
         <div className="grid grid-cols-4 h-full">
-            <Sidebar/>
+            <Sidebar currentUser={currentUser} />
           <div 
             className="
               col-span-3 
@@ -21,7 +24,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           ">
             {children}
           </div>
-          {/* <FollowBar /> */}
+          <FollowBar />
         </div>
      </div>
     </div>

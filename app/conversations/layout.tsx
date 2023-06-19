@@ -10,13 +10,6 @@ export default async function ConversationsLayout({
 }) {
   const conversations = await getConversations();
   const users = await getUsers();
-  // if(conversations.length === 0){
-  //   return (
-  //     <div>
-  //       chattttttt
-  //     </div>
-  //   )
-  // }
   return (
     // @ts-expect-error Server Component
     <Sidebar>

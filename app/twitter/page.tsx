@@ -1,8 +1,12 @@
+'use client'
 import React from 'react'
+import Header from './components/Header'
 
 const page = () => {
   return (
-    <div className='bg-black text-blue-500' >Làm chưa xong ^ ^</div>
+    <>
+      <Header label={'Home'} />
+    </>
   )
 }
 

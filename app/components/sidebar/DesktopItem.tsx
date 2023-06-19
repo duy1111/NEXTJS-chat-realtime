@@ -20,6 +20,7 @@ const DesktopItem: React.FC<DesktopItemProps> = ({
     if (onClick) {
       return onClick();
     }
+    
   };
 
   return ( 

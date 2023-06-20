@@ -29,7 +29,7 @@ const Sidebar = ({currentUser}:SidebarProps) => {
         },
         {
             label: 'Profile',
-            href: '/profile/1',
+            href: `/twitter/users/${currentUser?.id}`,
             icon: FaUser,
             auth: true
 

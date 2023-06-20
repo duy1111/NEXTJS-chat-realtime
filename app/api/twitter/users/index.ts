@@ -20,6 +20,7 @@ export default async function handler(
         return res.status(200).json(users)
     }
     catch(e){
-
+        console.log(e);
+        return res.status(400).end()
     }
 }

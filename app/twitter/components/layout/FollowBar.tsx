@@ -1,10 +1,15 @@
 'use client'
 import React from 'react'
-import useUsers from '@/app/hooks/useUsers'
+
 import Avatar from '../Avatar'
-const FollowBar = () => {
-  const {data: users = []} = useUsers()
-  console.log('ccccheckk users in follower',users)
+import getUsers from '@/app/actions/getUsers'
+import { User } from '@prisma/client';
+
+interface FollowBarProps {
+  users : User[];
+}
+const FollowBar: React.FC<FollowBarProps>= async({users =[]}) => {
+  
   
 
 
@@ -15,18 +20,20 @@ const FollowBar = () => {
         <div className=' bg-neutral-800 rounded-xl p-4  ' >
             <h2 className='text-white text-xl font-semibold' >Who to Follow</h2>
             <div className='flex flex-col gap-6 mt-4' >
-                {users.map((user: Record<string,any>) => {
-                  <div key={user.id} className='flex flex-row gap-4 ' >
-                    <Avatar userId={user.id}  />
+              
+              {users.map((item) => {
+                
+                  return  (<div key={item.id} className='flex flex-row gap-4 ' >
+                    <Avatar data={item}  />
                     <div className='flex flex-col ' >
                       <p className='text-white font-semibold text-sm' >
-                        {user.name}
+                        {item.name}
                       </p>  
                       <p className='text-neutral-400 text-sm' >
-                        @{user.name}
+                        @{item.name}
                       </p>
                     </div>
-                  </div>
+                  </div>)
                 })}
             </div>
         </div>

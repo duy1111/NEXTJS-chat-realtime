@@ -8,7 +8,7 @@ import UserBio from '../../components/users/UserBio'
 import { SafeUser } from '@/app/types'
 
 interface UserClientProps {
-    user: SafeUser
+    user: SafeUser| null
     currentUser: User | null
 }
 

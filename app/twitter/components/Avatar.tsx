@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import React, { useCallback } from 'react'
 
 interface AvatarProps {
-    data : SafeUser | null;
+    data : SafeUser| User | null;
     isLarge  ?: boolean;
     hasBorder ?: boolean;
 

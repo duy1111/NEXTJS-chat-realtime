@@ -22,10 +22,10 @@ const EditModal: React.FC<EditModalProps> = ({currentUser}) => {
    
     useEffect(() => {
         if(currentUser){
-            setProfileImage(currentUser?.image)
-            setCoverImage(currentUser?.coverImage)
-            setName(currentUser?.name)
-            setBio(currentUser?.bio)
+            setProfileImage(currentUser && currentUser?.image ? currentUser?.image : '')
+            setCoverImage(currentUser?.coverImage ? currentUser?.coverImage : '')
+            setName(currentUser?.name ?currentUser?.name : '')
+            setBio(currentUser?.bio ? currentUser?.bio : '')
         }   
         
     },[currentUser])
